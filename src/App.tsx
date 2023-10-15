@@ -12,7 +12,7 @@ function App() {
           <img src={reactLogo} className='logo react' alt='React logo' />
         </a>
       </div>
-      <h1>Vite + React Template</h1>
+      <h1>Vite + React Template {import.meta.env.VITE_APP_TITLE}</h1>
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
