@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "types": ["vite/client"],
-    "target": "ES2020",
+    "target": "ES5",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     "allowJs": true,
@@ -19,7 +19,8 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "incremental": true,
+    "jsx": "preserve",
 
     /* Linting */
     "noImplicitAny": true,
@@ -27,12 +28,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@*": ["./src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src/**/*.tsx", "src/**/*.ts"],
   "exclude": [
     "node_modules",
     "src/**/__tests__",
