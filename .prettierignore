@@ -3,3 +3,8 @@ dist
 build
 coverage
 logs
+cache
+.cache
+public
+CHANGELOG.md
+package-lock.json

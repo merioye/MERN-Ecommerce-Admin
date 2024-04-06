@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import Hello from '@/components/Hello';
+import reactLogo from './assets/react.svg';
 import './App.css';
 
 function App() {
@@ -9,8 +9,16 @@ function App() {
   return (
     <>
       <div>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
+        <a
+          href='https://react.dev'
+          target='_blank'
+          rel='noreferrer'
+        >
+          <img
+            src={reactLogo}
+            className='logo react'
+            alt='React logo'
+          />
         </a>
       </div>
       <h1>Vite + React Template {import.meta.env.VITE_APP_TITLE}</h1>
