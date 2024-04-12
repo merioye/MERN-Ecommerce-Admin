@@ -3,6 +3,10 @@ dist
 build
 coverage
 logs
+vitest.config.mts
+vite.config.ts
+cypress.config.ts
+.eslintrc.cjs
 public
 cache
 .cache

@@ -1,46 +1,8 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "types": ["vite/client"],
-    "target": "ES5",
-    "useDefineForClassFields": true,
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "allowJs": true,
-    "baseUrl": "./",
-    "sourceMap": true,
-    "rootDir": "src",
-    "outDir": "./dist",
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "noEmit": true,
-    "incremental": true,
-    "jsx": "preserve",
-
-    /* Linting */
-    "noImplicitAny": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "types": ["vite/client", "@types/node", "vitest/globals"]
   },
-  "include": ["src/**/*.tsx", "src/**/*.ts"],
-  "exclude": [
-    "node_modules",
-    "src/**/__tests__",
-    "src/**/__mocks__",
-    "src/**/setupTests.ts"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "cypress"],
+  "exclude": ["node_modules"]
 }

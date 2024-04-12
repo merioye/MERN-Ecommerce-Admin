@@ -7,4 +7,5 @@ cache
 .cache
 public
 CHANGELOG.md
+README.md
 package-lock.json
