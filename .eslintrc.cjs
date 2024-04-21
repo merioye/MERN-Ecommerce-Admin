@@ -58,6 +58,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'jsx-a11y/tabindex-no-positive': 'off',
     'no-unused-vars': 'warn',
+    'no-console': 'error',
     camelcase: 'off',
     'spaced-comment': 'error',
     quotes: ['error', 'single'],

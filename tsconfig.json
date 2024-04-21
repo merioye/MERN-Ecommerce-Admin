@@ -1,7 +1,13 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "types": ["vite/client", "@types/node", "vitest/globals"]
+    "types": [
+      "vite/client",
+      "@types/node",
+      "vitest/globals",
+      "react/canary",
+      "react-dom/canary"
+    ]
   },
   "include": ["src", "cypress"],
   "exclude": ["node_modules"]
