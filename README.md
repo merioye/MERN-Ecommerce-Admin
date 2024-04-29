@@ -1,27 +1,57 @@
-# React + TypeScript + Vite
+# Multivendor E-Commerce Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React, TypeScript, and Vite-based admin dashboard for a multivendor e-commerce website. It provides functionalities for managing vendors, products, orders, and other aspects of the e-commerce platform.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Vendor Management:**
+    * Create, view, and edit vendor accounts.
+    * Approve or reject vendor applications.
+* **Product Management:**
+    * View and manage all products listed on the platform.
+    * Allow vendors to add, edit, and delete their products.
+    * Categorize and filter products for easy navigation.
+    * Manage product inventory and variations.
+* **Order Management:**
+    * View and track all orders placed on the platform.
+    * Filter and search orders by various criteria.
+    * Manage order statuses and fulfillment processes.
+* **Reporting and Analytics:**
+    * Generate reports on sales, vendors, and other key metrics.
+    * Visualize data to gain insights into platform performance.
+* **Additional Features:**
+    * Secure user authentication and authorization.
+    * Responsive design for optimal viewing on different devices.
+    * Customizable dashboard layout.
+    * Integration with payment gateways.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* Frontend:
+    * React: A JavaScript library for building user interfaces.
+    * TypeScript: A superset of JavaScript that adds static typing for improved code quality and maintainability.
+    * Vite: A lightning-fast development server and bundler for modern web applications.
+     * Ant Design: An enterprise-class UI design language and React UI library with a set of high-quality React components, one of best React UI library for enterprises.
+* Other Dependencies:
+    * Zustand and Context API (for state management).
+    * React Router (for client-side routing).
+    * Form libraries (React Hook Form, Zod).
+    * Charting libraries (Apexcharts).
+    * API client library for data fetching (Axios, React Query).
+    * Styling (SASS)
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+1. Clone this repository:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   ```bash
+   git clone https://github.com/merioye/MERN-Ecommerce-Admin.git
+
+2. Install Dependencies:
+
+   ```bash
+   npm install
+
+3. Run the application:
+   ```bash
+   npm run dev
