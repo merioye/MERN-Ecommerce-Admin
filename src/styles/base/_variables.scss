@@ -1,0 +1,245 @@
+/* 
+************************************************************************************************************************
+START <=> Variables <=> START
+1. Background
+2. Text
+3. Box Shadow
+4. Opacity
+5. Miscellaneous
+************************************************************************************************************************
+*/
+
+$white: #fff;
+$black: #000;
+
+$grey-100: #f9fafb;
+$grey-200: #f4f6f8;
+$grey-300: #dfe3e8;
+$grey-400: #c4cdd5;
+$grey-500: #919eab;
+$grey-600: #637381;
+$grey-700: #454f5b;
+$grey-800: #212b36;
+$grey-900: #161c24;
+$grey-500-8: rgba($grey-500, 0.08);
+$grey-500-12: rgba($grey-500, 0.12);
+$grey500-16: rgba($grey-500, 0.16);
+$grey-500-24: rgba($grey-500, 0.24);
+$grey-500-32: rgba($grey-500, 0.32);
+$grey-500-48: rgba($grey-500, 0.48);
+$grey-500-56: rgba($grey-500, 0.56);
+$grey-500-80: rgba($grey-500, 0.8);
+
+$primary-lighter: #c8fad6;
+$primary-light: #5be49b;
+$primary-main: #00a76f;
+$primary-dark: #007867;
+$primary-darker: #004b50;
+$primary-contrast-text: $white;
+
+$secondary-lighter: #efd6ff;
+$secondary-light: #c684ff;
+$secondary-main: #8e33ff;
+$secondary-dark: #5119b7;
+$secondary-darker: #27097a;
+$secondary-contrast-text: $white;
+
+$info-lighter: #cafdf5;
+$info-light: #61f3f3;
+$info-main: #00b8d9;
+$info-dark: #006c9c;
+$info-darker: #003768;
+$info-contrast-text: $white;
+
+$success-lighter: #d3fcd2;
+$success-light: #77ed8b;
+$success-main: #22c55e;
+$success-dark: #118d57;
+$success-darker: #065e49;
+$success-contrast-text: $grey-800;
+
+$warning-lighter: #fff5cc;
+$warning-light: #ffd666;
+$warning-main: #ffab00;
+$warning-dark: #b76e00;
+$warning-darker: #7a4100;
+$warning-contrast-text: $grey-800;
+
+$error-lighter: #ffe9d5;
+$error-light: #ffac82;
+$error-main: #ff5630;
+$error-dark: #b71d18;
+$error-darker: #7a0916;
+$error-contrast-text: $white;
+
+// Gradients
+$primary-light-to-main: linear-gradient(
+  to bottom,
+  $primary-light,
+  $primary-main
+);
+$info-light-to-main: linear-gradient(to bottom, $info-light, $info-main);
+$success-light-to-main: linear-gradient(
+  to bottom,
+  $success-light,
+  $success-main
+);
+$warning-light-to-main: linear-gradient(
+  to bottom,
+  $warning-light,
+  $warning-main
+);
+$error-light-to-main: linear-gradient(to bottom, $error-light, $error-main);
+
+$bg-divider: $grey-500-24;
+
+$bg-hover-action: $grey-500-8;
+$bg-selected-action: $grey-500-12;
+$text-disabled-action: $grey-500-80;
+$bg-disabled-action: $grey-500-24;
+$bg-focus-action: $grey-500-24;
+
+// Color palette
+$colors: (
+  'primary-lighter': $primary-lighter,
+  'primary-light': $primary-light,
+  'primary-main': $primary-main,
+  'primary-dark': $primary-dark,
+  'primary-darker': $primary-darker,
+
+  'secondary-lighter': $secondary-lighter,
+  'secondary-light': $secondary-light,
+  'secondary-main': $secondary-main,
+  'secondary-dark': $secondary-dark,
+  'secondary-darker': $secondary-darker,
+
+  'info-lighter': $info-lighter,
+  'info-light': $info-light,
+  'info-main': $info-main,
+  'info-dark': $info-dark,
+  'info-darker': $info-darker,
+
+  'success-lighter': $success-lighter,
+  'success-light': $success-light,
+  'success-main': $success-main,
+  'success-dark': $success-dark,
+  'success-darker': $success-darker,
+
+  'warning-lighter': $warning-lighter,
+  'warning-light': $warning-light,
+  'warning-main': $warning-main,
+  'warning-dark': $warning-dark,
+  'warning-darker': $warning-darker,
+
+  'error-lighter': $error-lighter,
+  'error-light': $error-light,
+  'error-main': $error-main,
+  'error-dark': $error-dark,
+  'error-darker': $error-darker,
+
+  'grey-100': $grey-100,
+  'grey-200': $grey-200,
+  'grey-300': $grey-300,
+  'grey-400': $grey-400,
+  'grey-500': $grey-500,
+  'grey-600': $grey-600,
+  'grey-700': $grey-700,
+  'grey-800': $grey-800,
+  'grey-900': $grey-900,
+
+  'white': $white,
+  'black': $black,
+
+  'primary-light-to-main': $primary-light-to-main,
+  'info-light-to-main': $info-light-to-main,
+  'success-light-to-main': $success-light-to-main,
+  'warning-light-to-main': $warning-light-to-main,
+  'error-light-to-main': $error-light-to-main,
+);
+
+$theme-text-colors: (
+  primary: var(--text-primary),
+  secondary: var(--text-secondary),
+  disabled: var(--text-disabled),
+);
+
+$theme-bg-colors: (
+  paper: var(--bg-paper),
+  default: var(--bg-default),
+  neutral: var(--bg-neutral),
+);
+
+$theme-shadows: (
+  card: var(--shadow-card),
+  dropdown: var(--shadow-dropdown),
+  dialog: var(--shadow-dialog),
+  xs: var(--shadow-xs),
+  sm: var(--shadow-sm),
+  base: var(--shadow-base),
+  md: var(--shadow-md),
+  lg: var(--shadow-lg),
+  xl: var(--shadow-xl),
+  '2xl': var(--shadow-2xl),
+);
+
+// Box Shadow
+$shadow-primary: 0 8px 16px 0 rgba($primary-main, 0.24);
+$shadow-secondary: 0 8px 16px 0 rgba($secondary-main, 0.24);
+$shadow-info: 0 8px 16px 0 rgba($info-main, 0.24);
+$shadow-success: 0 8px 16px 0 rgba($success-main, 0.24);
+$shadow-warning: 0 8px 16px 0 rgba($warning-main, 0.24);
+$shadow-error: 0 8px 16px 0 rgba($error-main, 0.24);
+
+// Light mode shadows
+$shadow-base-light: $grey-500;
+$shadow-base-transparent-light: rgba($shadow-base-light, 0.16);
+$shadow-card-light:
+  0 0 2px 0 rgba($shadow-base-light, 0.2),
+  0 12px 24px -4px rgba($shadow-base-light, 0.12);
+$shadow-dropdown-light:
+  0 0 2px 0 rgba($shadow-base-light, 0.24),
+  -20px 20px 40px -4px rgba($shadow-base-light, 0.24);
+$shadow-dialog-light: -40px 40px 80px -8px rgba($black, 0.24);
+$shadow-xs-light: 0 1px 2px 0 $shadow-base-transparent-light;
+$shadow-sm-light: 0px 4px 8px 0px $shadow-base-transparent-light;
+$shadow-base-light: 0 8px 16px 0 $shadow-base-transparent-light;
+$shadow-md-light: 0 12px 24px -4px $shadow-base-transparent-light;
+$shadow-lg-light: 0 16px 32px -4px $shadow-base-transparent-light;
+$shadow-xl-light: 0 20px 40px -4px $shadow-base-transparent-light;
+$shadow-2xl-light: 0 24px 48px 0 $shadow-base-transparent-light;
+
+// Dark mode shadows
+$shadow-base-dark: $black;
+$shadow-base-transparent-dark: rgba($shadow-base-dark, 0.16);
+$shadow-card-dark:
+  0 0 2px 0 rgba($shadow-base-dark, 0.2),
+  0 12px 24px -4px rgba($shadow-base-dark, 0.12);
+$shadow-dropdown-dark:
+  0 0 2px 0 rgba($shadow-base-dark, 0.24),
+  -20px 20px 40px -4px rgba($shadow-base-dark, 0.24);
+$shadow-dialog-dark: -40px 40px 80px -8px rgba($black, 0.24);
+$shadow-xs-dark: 0 1px 2px 0 $shadow-base-transparent-dark;
+$shadow-sm-dark: 0px 4px 8px 0px $shadow-base-transparent-dark;
+$shadow-base-dark: 0 8px 16px 0 $shadow-base-transparent-dark;
+$shadow-md-dark: 0 12px 24px -4px $shadow-base-transparent-dark;
+$shadow-lg-dark: 0 16px 32px -4px $shadow-base-transparent-dark;
+$shadow-xl-dark: 0 20px 40px -4px $shadow-base-transparent-dark;
+$shadow-2xl-dark: 0 24px 48px 0 $shadow-base-transparent-dark;
+
+// Opacity
+$opacity-hover: 0.08;
+$opacity-disabled: 0.48;
+
+// Miscellaneous
+$font-family: 'Public Sans', sans-serif;
+
+/* 
+************************************************************************************************************************
+END <=> Variables <=> END
+1. Background
+2. Text
+3. Box Shadow
+4. Opacity
+5. Miscellaneous
+************************************************************************************************************************
+*/

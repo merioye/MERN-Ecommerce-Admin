@@ -1,0 +1,380 @@
+/* 
+************************************************************************************************************************
+START <=> Common Color Classes (Not Specific to any Theme) <=> START
+1. Background
+2. Text
+3. Border
+************************************************************************************************************************
+*/
+
+@each $key, $val in $colors {
+  // Text
+  .text-#{$key} {
+    color: $val;
+  }
+  .hover-text-#{$key} {
+    &:hover {
+      color: $val;
+    }
+  }
+
+  // Background
+  .bg-#{$key} {
+    background-color: $val;
+  }
+  .hover-bg-#{$key} {
+    &:hover {
+      background-color: $val;
+    }
+  }
+
+  // Border
+  .b-#{$key} {
+    border: 1px solid $val;
+  }
+  .bl-#{$key} {
+    border-left: 1px solid $val;
+  }
+  .br-#{$key} {
+    border-right: 1px solid $val;
+  }
+  .bt-#{$key} {
+    border-top: 1px solid $val;
+  }
+  .bb-#{$key} {
+    border-bottom: 1px solid $val;
+  }
+  .b-dashed-#{$key} {
+    border: 1px dashed $val;
+  }
+  .bl-dashed-#{$key} {
+    border-left: 1px dashed $val;
+  }
+  .br-dashed-#{$key} {
+    border-right: 1px dashed $val;
+  }
+  .bt-dashed-#{$key} {
+    border-top: 1px dashed $val;
+  }
+  .bb-dashed-#{$key} {
+    border-bottom: 1px dashed $val;
+  }
+}
+
+/* 
+************************************************************************************************************************
+END <=> Common Color Classes (Not Specific to any Theme) <=> END 
+1. Background
+2. Text
+3. Border
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Theme Specific Color Classes <=> START
+1. Background
+2. Text
+3. Border
+4. Box Shadow
+************************************************************************************************************************
+*/
+
+@each $key, $val in $theme-text-colors {
+  // Text
+  .text-#{$key} {
+    color: $val;
+  }
+  .hover-text-#{$key} {
+    &:hover {
+      color: $val;
+    }
+  }
+
+  // Border
+  .b-text-#{$key} {
+    border: 1px solid $val;
+  }
+  .bl-text-#{$key} {
+    border-left: 1px solid $val;
+  }
+  .br-text-#{$key} {
+    border-right: 1px solid $val;
+  }
+  .bt-text-#{$key} {
+    border-top: 1px solid $val;
+  }
+  .bb-text-#{$key} {
+    border-bottom: 1px solid $val;
+  }
+  .b-dashed-text-#{$key} {
+    border: 1px dashed $val;
+  }
+  .bl-dashed-text-#{$key} {
+    border-left: 1px dashed $val;
+  }
+  .br-dashed-text-#{$key} {
+    border-right: 1px dashed $val;
+  }
+  .bt-dashed-text-#{$key} {
+    border-top: 1px dashed $val;
+  }
+  .bb-dashed-text-#{$key} {
+    border-bottom: 1px dashed $val;
+  }
+}
+
+@each $key, $val in $theme-bg-colors {
+  // Background
+  .bg-#{$key} {
+    background-color: $val;
+  }
+  .hover-bg-#{$key} {
+    &:hover {
+      background-color: $val;
+    }
+  }
+
+  // Border
+  .b-bg-#{$key} {
+    border: 1px solid $val;
+  }
+  .bl-bg-#{$key} {
+    border-left: 1px solid $val;
+  }
+  .br-bg-#{$key} {
+    border-right: 1px solid $val;
+  }
+  .bt-bg-#{$key} {
+    border-top: 1px solid $val;
+  }
+  .bb-bg-#{$key} {
+    border-bottom: 1px solid $val;
+  }
+  .b-dashed-bg-#{$key} {
+    border: 1px dashed $val;
+  }
+  .bl-dashed-bg-#{$key} {
+    border-left: 1px dashed $val;
+  }
+  .br-dashed-bg-#{$key} {
+    border-right: 1px dashed $val;
+  }
+  .bt-dashed-bg-#{$key} {
+    border-top: 1px dashed $val;
+  }
+  .bb-dashed-bg-#{$key} {
+    border-bottom: 1px dashed $val;
+  }
+}
+
+@each $key, $val in $theme-shadows {
+  .shadow-#{$key} {
+    box-shadow: $val;
+  }
+}
+
+/* 
+************************************************************************************************************************
+END <=> Theme Specific Color Classes <=> END
+1. Background
+2. Text
+3. Border
+4. Box Shadow
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Presets <=> START
+************************************************************************************************************************
+*/
+
+.text-preset-lighter {
+  color: var(--preset-lighter);
+}
+.hover-text-preset-lighter {
+  &:hover {
+    color: var(--preset-lighter);
+  }
+}
+.text-preset-light {
+  color: var(--preset-light);
+}
+.hover-text-preset-light {
+  &:hover {
+    color: var(--preset-light);
+  }
+}
+.text-preset-main {
+  color: var(--preset-main);
+}
+.hover-text-preset-main {
+  &:hover {
+    color: var(--preset-main);
+  }
+}
+.text-preset-dark {
+  color: var(--preset-dark);
+}
+.hover-text-preset-dark {
+  &:hover {
+    color: var(--preset-dark);
+  }
+}
+.text-preset-darker {
+  color: var(--preset-darker);
+}
+.hover-text-preset-darker {
+  &:hover {
+    color: var(--preset-darker);
+  }
+}
+.bg-preset-lighter {
+  background-color: var(--preset-lighter);
+}
+.hover-bg-preset-lighter {
+  &:hover {
+    background-color: var(--preset-lighter);
+  }
+}
+.bg-preset-light {
+  background-color: var(--preset-light);
+}
+.hover-bg-preset-light {
+  &:hover {
+    background-color: var(--preset-light);
+  }
+}
+.bg-preset-main {
+  background-color: var(--preset-main);
+}
+.hover-bg-preset-main {
+  &:hover {
+    background-color: var(--preset-main);
+  }
+}
+.bg-preset-dark {
+  background-color: var(--preset-dark);
+}
+.hover-bg-preset-dark {
+  &:hover {
+    background-color: var(--preset-dark);
+  }
+}
+.bg-preset-darker {
+  background-color: var(--preset-darker);
+}
+.hover-bg-preset-darker {
+  &:hover {
+    background-color: var(--preset-darker);
+  }
+}
+.preset-contrast-text {
+  color: var(--preset-contrast-text);
+}
+.hover-preset-contrast-text {
+  &:hover {
+    color: var(--preset-contrast-text);
+  }
+}
+
+/* 
+************************************************************************************************************************
+END <=> Presets <=> END
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Miscellaneous <=> START
+1. Background
+3. Border
+4. Box Shadow
+************************************************************************************************************************
+*/
+
+// Background
+.bg-none {
+  background-color: none;
+}
+.bg-divider {
+  background-color: $bg-divider;
+}
+.bg-selected-action {
+  background-color: $bg-selected-action;
+}
+.bg-disabled-action {
+  &:disabled {
+    background-color: $bg-disabled-action;
+  }
+}
+.text-action-disabled {
+  &:disabled {
+    color: $text-disabled-action;
+  }
+}
+.hover-bg-action {
+  &:hover {
+    background-color: $bg-hover-action;
+  }
+}
+.bg-focus-action {
+  &:focus {
+    background-color: $bg-focus-action;
+  }
+}
+.bg-active-action {
+  &:active {
+    background-color: var(--bg-action-active);
+  }
+}
+
+// Border
+.b-none {
+  border: none;
+}
+.bl-none {
+  border-left: none;
+}
+.br-none {
+  border-right: none;
+}
+.bt-none {
+  border-top: none;
+}
+.bb-none {
+  border-bottom: none;
+}
+
+// Box Shadow
+.shadow-primary {
+  box-shadow: $shadow-primary;
+}
+.shadow-secondary {
+  box-shadow: $shadow-secondary;
+}
+.shadow-info {
+  box-shadow: $shadow-info;
+}
+.shadow-success {
+  box-shadow: $shadow-success;
+}
+.shadow-warning {
+  box-shadow: $shadow-warning;
+}
+.shadow-error {
+  box-shadow: $shadow-error;
+}
+.shadow-none {
+  box-shadow: none;
+}
+
+/* 
+************************************************************************************************************************
+END <=> Miscellaneous <=> END
+1. Background
+3. Border
+4. Box Shadow
+************************************************************************************************************************
+*/

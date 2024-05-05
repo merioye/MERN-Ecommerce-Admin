@@ -1,3 +1,4 @@
+import purgeCss from '@mojojoejo/vite-plugin-purgecss';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
@@ -9,5 +10,11 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
     dts({ tsconfigPath: './tsconfig.build.json' }),
+    purgeCss({
+      content: [
+        './index.html',
+        './src/**/*.{jsx,js,tsx,ts}', // Include all React components
+      ],
+    }),
   ],
 });

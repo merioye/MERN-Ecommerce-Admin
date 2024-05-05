@@ -1,0 +1,165 @@
+/* 
+************************************************************************************************************************
+START <=> Typography <=> START
+1. Heading
+2. Subtitle
+3. Paragraph
+************************************************************************************************************************
+*/
+
+// Heading
+.heading-2xl {
+  font-family: $font-family;
+  line-height: 80px;
+  font-weight: 800;
+  letter-spacing: 0px;
+  @include xs {
+    font-size: 52px;
+  }
+  @include xl {
+    font-size: 58px;
+  }
+  @include xxl {
+    font-size: 64px;
+  }
+}
+.heading-xl {
+  font-family: $font-family;
+  line-height: 64px;
+  font-weight: 800;
+  letter-spacing: 0px;
+  @include xs {
+    font-size: 40px;
+  }
+  @include xl {
+    font-size: 44px;
+  }
+  @include xxl {
+    font-size: 48px;
+  }
+}
+.heading-lg {
+  font-family: $font-family;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  @include xs {
+    font-size: 26px;
+  }
+  @include xl {
+    font-size: 30px;
+  }
+  @include xxl {
+    font-size: 32px;
+  }
+}
+.heading-md {
+  font-family: $font-family;
+  line-height: 36px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  @include xs {
+    font-size: 20px;
+  }
+  @include xl {
+    font-size: 24px;
+  }
+  @include xxl {
+    font-size: 24px;
+  }
+}
+.heading-base {
+  font-family: $font-family;
+  line-height: 30px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  @include xs {
+    font-size: 19px;
+  }
+  @include xl {
+    font-size: 20px;
+  }
+  @include xxl {
+    font-size: 20px;
+  }
+}
+.heading-sm {
+  font-family: $font-family;
+  line-height: 28px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  @include xs {
+    font-size: 18px;
+  }
+  @include xl {
+    font-size: 18px;
+  }
+  @include xxl {
+    font-size: 18px;
+  }
+}
+
+// Subtitle
+.subtitle-1 {
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+.subtitle-2 {
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: 0px;
+}
+
+// Paragraph
+.text-lg {
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+.text-md {
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+.text-base {
+  font-family: $font-family;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: 0px;
+}
+
+.text-btn {
+  font-family: $font-family;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-transform: capitalize;
+}
+.text-overline {
+  font-family: $font-family;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+
+/* 
+************************************************************************************************************************
+END <=> Typography <=> END
+1. Heading
+2. Subtitle
+3. Paragraph
+************************************************************************************************************************
+*/

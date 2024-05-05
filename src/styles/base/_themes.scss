@@ -1,0 +1,203 @@
+/* 
+************************************************************************************************************************
+START <=> Light Theme Palette <=> START
+1. Background
+2. Text
+3. Box Shadow
+************************************************************************************************************************
+*/
+
+html[data-theme='light'] {
+  --text-primary: #{$grey-800};
+  --text-secondary: #{$grey-600};
+  --text-disabled: #{$grey-500};
+  --bg-paper: #{$white};
+  --bg-default: #{$white};
+  --bg-neutral: #{$grey-200};
+  --bg-action-active: #{$grey-600};
+
+  --shadow-card: #{$shadow-card-light};
+  --shadow-dropdown: #{$shadow-dropdown-light};
+  --shadow-dialog: #{$shadow-dialog-light};
+  --shadow-xs: #{$shadow-xs-light};
+  --shadow-sm: #{$shadow-sm-light};
+  --shadow-base: #{$shadow-base-light};
+  --shadow-md: #{$shadow-md-light};
+  --shadow-lg: #{$shadow-lg-light};
+  --shadow-xl: #{$shadow-xl-light};
+  --shadow-2xl: #{$shadow-2xl-light};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Light Theme Palette <=> END
+1. Background
+2. Text
+3. Box Shadow
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Dark Theme Palette <=> START
+1. Background
+2. Text
+3. Box Shadow
+************************************************************************************************************************
+*/
+
+html[data-theme='dark'] {
+  --text-primary: #{$white};
+  --text-secondary: #{$grey-500};
+  --text-disabled: #{$grey-600};
+  --bg-paper: #{$grey-800};
+  --bg-default: #{$grey-900};
+  --bg-neutral: #{$grey-500};
+  --bg-action-active: #{$grey-500};
+
+  --shadow-card: #{$shadow-card-dark};
+  --shadow-dropdown: #{$shadow-dropdown-dark};
+  --shadow-dialog: #{$shadow-dialog-dark};
+  --shadow-xs: #{$shadow-xs-dark};
+  --shadow-sm: #{$shadow-sm-dark};
+  --shadow-base: #{$shadow-base-dark};
+  --shadow-md: #{$shadow-md-dark};
+  --shadow-lg: #{$shadow-lg-dark};
+  --shadow-xl: #{$shadow-xl-dark};
+  --shadow-2xl: #{$shadow-2xl-dark};
+}
+
+/* 
+************************************************************************************************************************
+START <=> Dark Theme Palette <=> START
+1. Background
+2. Text
+3. Box Shadow
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Primary Preset <=> START
+************************************************************************************************************************
+*/
+
+html[data-preset='primary'] {
+  --preset-lighter: #{$primary-lighter};
+  --preset-light: #{$primary-light};
+  --preset-main: #{$primary-main};
+  --preset-dark: #{$primary-dark};
+  --preset-darker: #{$primary-darker};
+  --preset-contrast-text: #{$primary-contrast-text};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Primary Preset <=> END
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Secondary Preset <=> START
+************************************************************************************************************************
+*/
+
+html[data-preset='secondary'] {
+  --preset-lighter: #{$secondary-lighter};
+  --preset-light: #{$secondary-light};
+  --preset-main: #{$secondary-main};
+  --preset-dark: #{$secondary-dark};
+  --preset-darker: #{$secondary-darker};
+  --preset-contrast-text: #{$secondary-contrast-text};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Secondary Preset <=> END
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Info Preset <=> START
+************************************************************************************************************************
+*/
+
+html[data-preset='info'] {
+  --preset-lighter: #{$info-lighter};
+  --preset-light: #{$info-light};
+  --preset-main: #{$info-main};
+  --preset-dark: #{$info-dark};
+  --preset-darker: #{$info-darker};
+  --preset-contrast-text: #{$info-contrast-text};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Info Preset <=> END
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Success Preset <=> START
+************************************************************************************************************************
+*/
+
+html[data-preset='success'] {
+  --preset-lighter: #{$success-lighter};
+  --preset-light: #{$success-light};
+  --preset-main: #{$success-main};
+  --preset-dark: #{$success-dark};
+  --preset-darker: #{$success-darker};
+  --preset-contrast-text: #{$success-contrast-text};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Success Preset <=> END
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Warning Preset <=> START
+************************************************************************************************************************
+*/
+
+html[data-preset='warning'] {
+  --preset-lighter: #{$warning-lighter};
+  --preset-light: #{$warning-light};
+  --preset-main: #{$warning-main};
+  --preset-dark: #{$warning-dark};
+  --preset-darker: #{$warning-darker};
+  --preset-contrast-text: #{$warning-contrast-text};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Warning Preset <=> END
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Error Preset <=> START
+************************************************************************************************************************
+*/
+
+html[data-preset='error'] {
+  --preset-lighter: #{$error-lighter};
+  --preset-light: #{$error-light};
+  --preset-main: #{$error-main};
+  --preset-dark: #{$error-dark};
+  --preset-darker: #{$error-darker};
+  --preset-contrast-text: #{$error-contrast-text};
+}
+
+/* 
+************************************************************************************************************************
+END <=> Error Preset <=> END
+************************************************************************************************************************
+*/

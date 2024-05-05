@@ -1,0 +1,65 @@
+@use 'sass:math';
+
+/* 
+************************************************************************************************************************
+START <=> Reusable Utility Functions <=> START
+************************************************************************************************************************
+*/
+
+// Generate spacing values map
+@function generate-spacing-values(
+  $start,
+  $end,
+  $unit: 'px',
+  $negative: false,
+  $includeUnitInClassName: false
+) {
+  // The final spacing values map
+  $spacing-map: ();
+  $classNameUnitSymbol: if($unit == '%', 'pc', $unit);
+
+  @for $i from $start through $end {
+    $value: if($unit != 'none', #{$i}#{$unit}, #{$i});
+
+    @if $includeUnitInClassName {
+      @if $negative {
+        $spacing-map: map-merge(
+          $spacing-map,
+          (
+            'not-#{$i}#{$classNameUnitSymbol}': -#{$value},
+          )
+        );
+      } @else {
+        $spacing-map: map-merge(
+          $spacing-map,
+          (
+            '#{$i}#{$classNameUnitSymbol}': #{$value},
+          )
+        );
+      }
+    } @else {
+      @if $negative {
+        $spacing-map: map-merge(
+          $spacing-map,
+          (
+            'not-#{$i}': -#{$value},
+          )
+        );
+      } @else {
+        $spacing-map: map-merge(
+          $spacing-map,
+          (
+            '#{$i}': #{$value},
+          )
+        );
+      }
+    }
+  }
+  @return $spacing-map;
+}
+
+/* 
+************************************************************************************************************************
+END <=> Reusable Utility Functions <=> END
+************************************************************************************************************************
+*/

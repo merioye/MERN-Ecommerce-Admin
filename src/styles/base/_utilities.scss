@@ -1,0 +1,770 @@
+@use 'sass:math';
+
+/* 
+************************************************************************************************************************
+START <=> CSS Properties Utility Classes <=> START
+************************************************************************************************************************
+*/
+
+/* 
+************************************************************************************************************************
+START <=> Spacing values maps <=> START
+************************************************************************************************************************
+*/
+
+// Common spacing
+$percentage-spacing-positive: generate-spacing-values(0, 100, '%', false, true);
+$percentage-spacing-negative: generate-spacing-values(0, 100, '%', true, true);
+$viewport-width-spacing-positive: generate-spacing-values(
+  0,
+  100,
+  'vw',
+  false,
+  true
+);
+$viewport-height-spacing-positive: generate-spacing-values(
+  0,
+  100,
+  'vh',
+  false,
+  true
+);
+$hundred-pixel-spacing-positive: generate-spacing-values(0, 100);
+$hundred-pixel-spacing-negative: generate-spacing-values(0, 100, 'px', true);
+
+// Width, Height specific spacing
+$width-pixel-spacing-positive: generate-spacing-values(
+  0,
+  1000,
+  'px',
+  false,
+  true
+);
+$height-pixel-spacing-positive: generate-spacing-values(
+  0,
+  1000,
+  'px',
+  false,
+  true
+);
+
+// Position specific spacing
+$position-pixel-spacing-positive: generate-spacing-values(
+  0,
+  200,
+  'px',
+  false,
+  true
+);
+$position-pixel-spacing-negative: generate-spacing-values(
+  0,
+  200,
+  'px',
+  true,
+  true
+);
+
+// Border width specific spacing
+$border-width-pixel-spacing-positive: generate-spacing-values(0, 10, 'px');
+
+// ZIndex specific spacing
+$z-index-spacing-positive: generate-spacing-values(0, 100, 'none');
+$z-index-spacing-negative: generate-spacing-values(0, 100, 'none', true);
+
+/* 
+************************************************************************************************************************
+END <=> Spacing values maps <=> END
+************************************************************************************************************************
+*/
+
+// Utilities map
+$utilities: (
+  'padding': (
+    'prefix': 'p',
+    'values': $hundred-pixel-spacing-positive,
+  ),
+  'padding-left': (
+    'prefix': 'pl',
+    'values': $hundred-pixel-spacing-positive,
+  ),
+  'padding-right': (
+    'prefix': 'pr',
+    'values': $hundred-pixel-spacing-positive,
+  ),
+  'padding-top': (
+    'prefix': 'pt',
+    'values': $hundred-pixel-spacing-positive,
+  ),
+  'padding-bottom': (
+    'prefix': 'pb',
+    'values': $hundred-pixel-spacing-positive,
+  ),
+  'margin': (
+    'prefix': 'm',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+        ),
+        map-merge(
+          $hundred-pixel-spacing-positive,
+          $hundred-pixel-spacing-negative
+        )
+      ),
+  ),
+  'margin-left': (
+    'prefix': 'ml',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+        ),
+        map-merge(
+          $hundred-pixel-spacing-positive,
+          $hundred-pixel-spacing-negative
+        )
+      ),
+  ),
+  'margin-right': (
+    'prefix': 'mr',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+        ),
+        map-merge(
+          $hundred-pixel-spacing-positive,
+          $hundred-pixel-spacing-negative
+        )
+      ),
+  ),
+  'margin-top': (
+    'prefix': 'mt',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+        ),
+        map-merge(
+          $hundred-pixel-spacing-positive,
+          $hundred-pixel-spacing-negative
+        )
+      ),
+  ),
+  'margin-bottom': (
+    'prefix': 'mb',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+        ),
+        map-merge(
+          $hundred-pixel-spacing-positive,
+          $hundred-pixel-spacing-negative
+        )
+      ),
+  ),
+  'opacity': (
+    'prefix': 'opacity',
+    'values': (
+      '0': 0,
+      '05': 0.05,
+      '10': 0.1,
+      '15': 0.15,
+      '20': 0.2,
+      '25': 0.25,
+      '30': 0.3,
+      '35': 0.35,
+      '40': 0.4,
+      '45': 0.45,
+      '50': 0.5,
+      '55': 0.55,
+      '60': 0.6,
+      '65': 0.65,
+      '70': 0.7,
+      '75': 0.75,
+      '80': 0.8,
+      '85': 0.85,
+      '90': 0.9,
+      '95': 0.95,
+      '100': 1,
+    ),
+  ),
+  'border-radius': (
+    'prefix': 'rounded',
+    'values':
+      map-merge(
+        (
+          'none': 0,
+          'full': 50%,
+        ),
+        $hundred-pixel-spacing-positive
+      ),
+  ),
+  'border-top-left-radius': (
+    'prefix': 'rounded-tl',
+    'values':
+      map-merge(
+        (
+          'none': 0,
+          'full': 50%,
+        ),
+        $hundred-pixel-spacing-positive
+      ),
+  ),
+  'border-top-right-radius': (
+    'prefix': 'rounded-tr',
+    'values':
+      map-merge(
+        (
+          'none': 0,
+          'full': 50%,
+        ),
+        $hundred-pixel-spacing-positive
+      ),
+  ),
+  'border-bottom-left-radius': (
+    'prefix': 'rounded-bl',
+    'values':
+      map-merge(
+        (
+          'none': 0,
+          'full': 50%,
+        ),
+        $hundred-pixel-spacing-positive
+      ),
+  ),
+  'border-bottom-right-radius': (
+    'prefix': 'rounded-br',
+    'values':
+      map-merge(
+        (
+          'none': 0,
+          'full': 50%,
+        ),
+        $hundred-pixel-spacing-positive
+      ),
+  ),
+  'display': (
+    'prefix': 'd',
+    'values': (
+      'none': none,
+      'block': block,
+      'flex': flex,
+      'grid': grid,
+      'inline': inline,
+      'inline-block': inline-block,
+    ),
+  ),
+  'align-items': (
+    'prefix': 'items',
+    'values': (
+      'center': center,
+      'start': flex-start,
+      'end': flex-end,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+      'baseline': baseline,
+      'stretch': stretch,
+    ),
+  ),
+  'justify-content': (
+    'prefix': 'justify',
+    'values': (
+      'center': center,
+      'start': flex-start,
+      'end': flex-end,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+    ),
+  ),
+  'flex-direction': (
+    'prefix': 'direction',
+    'values': (
+      'row': row,
+      'row-reverse': row-reverse,
+      'column': column,
+      'column-reverse': column-reverse,
+    ),
+  ),
+  'flex': (
+    'prefix': 'flex',
+    'values': (
+      '1': 1 1 100%,
+      'auto': 1 1 auto,
+      'initial': 0 1 auto,
+      'none': none,
+    ),
+  ),
+  'flex-wrap': (
+    'prefix': 'wrap',
+    'values': (
+      'nowrap': nowrap,
+      'wrap': wrap,
+      'wrap-reverse': wrap-reverse,
+    ),
+  ),
+  'flex-grow': (
+    'prefix': 'grow',
+    'values': (
+      '0': 0,
+      '1': 1,
+    ),
+  ),
+  'flex-shrink': (
+    'prefix': 'shrink',
+    'values': (
+      '0': 0,
+      '1': 1,
+    ),
+  ),
+  'align-self': (
+    'prefix': 'self',
+    'values': (
+      'auto': auto,
+      'start': flex-start,
+      'end': flex-end,
+      'center': center,
+      'baseline': baseline,
+      'stretch': stretch,
+    ),
+  ),
+  'order': (
+    'prefix': 'order',
+    'values': (
+      '1': 1,
+      '2': 2,
+      '3': 3,
+      '4': 4,
+      '5': 5,
+      '6': 6,
+      '7': 7,
+      '8': 8,
+      '9': 9,
+      '10': 10,
+      '11': 11,
+      '12': 12,
+      'first': -9999,
+      'last': 9999,
+      'none': 0,
+    ),
+  ),
+  'gap': (
+    'prefix': 'gap',
+    'values': $hundred-pixel-spacing-positive,
+  ),
+  'font-style': (
+    'prefix': 'font',
+    'values': (
+      'italic': italic,
+      'normal': normal,
+    ),
+  ),
+  'text-decoration': (
+    'prefix': 'decoration',
+    'values': (
+      'none': none,
+      'underline': underline,
+      'line-through': line-through,
+      'underline line-through': underline line-through,
+    ),
+  ),
+  'text-transform': (
+    'prefix': 'transform',
+    'values': (
+      'uppercase': uppercase,
+      'lowercase': lowercase,
+      'capitalize': capitalize,
+    ),
+  ),
+  'text-align': (
+    'prefix': 'align',
+    'values': (
+      'left': left,
+      'right': right,
+      'center': center,
+      'justify': justify,
+    ),
+  ),
+  'text-overflow': (
+    'prefix': 'text-overflow',
+    'values': (
+      'ellipsis': ellipsis,
+      'clip': clip,
+    ),
+  ),
+  'white-space': (
+    'prefix': 'whitespace',
+    'values': (
+      'normal': normal,
+      'nowrap': nowrap,
+      'pre': pre,
+      'pre-line': pre-line,
+      'pre-wrap': pre-wrap,
+    ),
+  ),
+  'vertical-align': (
+    'prefix': 'align',
+    'values': (
+      'baseline': baseline,
+      'top': top,
+      'middle': middle,
+      'bottom': bottom,
+      'text-top': text-top,
+      'text-bottom': text-bottom,
+    ),
+  ),
+  'border-width': (
+    'prefix': 'border',
+    'values': $border-width-pixel-spacing-positive,
+  ),
+  'cursor': (
+    'prefix': 'cursor',
+    'values': (
+      'auto': auto,
+      'default': default,
+      'pointer': pointer,
+      'wait': wait,
+      'text': text,
+      'move': move,
+      'not-allowed': not-allowed,
+    ),
+  ),
+  'pointer-events': (
+    'prefix': 'pointer',
+    'values': (
+      'none': none,
+      'auto': auto,
+    ),
+  ),
+  'user-select': (
+    'prefix': 'select',
+    'values': (
+      'none': none,
+      'auto': auto,
+      'text': text,
+      'all': all,
+    ),
+  ),
+  'touch-action': (
+    'prefix': 'touch',
+    'values': (
+      'auto': auto,
+      'none': none,
+      'pan-x': pan-x,
+      'pan-y': pan-y,
+      'manipulation': manipulation,
+    ),
+  ),
+  'resize': (
+    'prefix': 'resize',
+    'values': (
+      'none': none,
+      'both': both,
+      'horizontal': horizontal,
+      'vertical': vertical,
+      'block': block,
+      'inline': inline,
+    ),
+  ),
+  'scroll-behavior': (
+    'prefix': 'scroll',
+    'values': (
+      'auto': auto,
+      'smooth': smooth,
+    ),
+  ),
+  'overflow': (
+    'prefix': 'overflow',
+    'values': (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll,
+    ),
+  ),
+  'overflow-x': (
+    'prefix': 'overflow-x',
+    'values': (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll,
+    ),
+  ),
+  'overflow-y': (
+    'prefix': 'overflow-y',
+    'values': (
+      'auto': auto,
+      'hidden': hidden,
+      'visible': visible,
+      'scroll': scroll,
+    ),
+  ),
+  'object-fit': (
+    'prefix': 'object',
+    'values': (
+      'contain': contain,
+      'cover': cover,
+      'fill': fill,
+      'none': none,
+      'scale-down': scale-down,
+    ),
+  ),
+  'object-position': (
+    'prefix': 'object',
+    'values': (
+      'top': top,
+      'bottom': bottom,
+      'left': left,
+      'right': right,
+      'center': center,
+      'left-top': left top,
+      'left-bottom': left bottom,
+      'right-top': right top,
+      'right-bottom': right bottom,
+    ),
+  ),
+  'visibility': (
+    'prefix': 'vis',
+    'values': (
+      'hidden': hidden,
+      'visible': visible,
+    ),
+  ),
+  'z-index': (
+    'prefix': 'z',
+    'values': map-merge($z-index-spacing-positive, $z-index-spacing-negative),
+  ),
+  'width': (
+    'prefix': 'w',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+          'svw': 100svw,
+          'lvw': 100lvw,
+          'dvw': 100dvw,
+          'min': min-content,
+          'max': max-content,
+          'fit': fit-content,
+        ),
+        map-merge(
+          $percentage-spacing-positive,
+          map-merge(
+            $viewport-width-spacing-positive,
+            $width-pixel-spacing-positive
+          )
+        )
+      ),
+  ),
+  'height': (
+    'prefix': 'h',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+          'svh': 100svh,
+          'lvh': 100lvh,
+          'dvh': 100dvh,
+          'min': min-content,
+          'max': max-content,
+          'fit': fit-content,
+        ),
+        map-merge(
+          $percentage-spacing-positive,
+          map-merge(
+            $viewport-height-spacing-positive,
+            $height-pixel-spacing-positive
+          )
+        )
+      ),
+  ),
+  'min-width': (
+    'prefix': 'min-w',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+          'svw': 100svw,
+          'lvw': 100lvw,
+          'dvw': 100dvw,
+          'min': min-content,
+          'max': max-content,
+          'fit': fit-content,
+        ),
+        map-merge(
+          $percentage-spacing-positive,
+          map-merge(
+            $viewport-width-spacing-positive,
+            $width-pixel-spacing-positive
+          )
+        )
+      ),
+  ),
+  'min-height': (
+    'prefix': 'min-h',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+          'svh': 100svh,
+          'lvh': 100lvh,
+          'dvh': 100dvh,
+          'min': min-content,
+          'max': max-content,
+          'fit': fit-content,
+        ),
+        map-merge(
+          $percentage-spacing-positive,
+          map-merge(
+            $viewport-height-spacing-positive,
+            $height-pixel-spacing-positive
+          )
+        )
+      ),
+  ),
+  'max-width': (
+    'prefix': 'max-w',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+          'svw': 100svw,
+          'lvw': 100lvw,
+          'dvw': 100dvw,
+          'min': min-content,
+          'max': max-content,
+          'fit': fit-content,
+        ),
+        map-merge(
+          $percentage-spacing-positive,
+          map-merge(
+            $viewport-width-spacing-positive,
+            $width-pixel-spacing-positive
+          )
+        )
+      ),
+  ),
+  'max-height': (
+    'prefix': 'max-h',
+    'values':
+      map-merge(
+        (
+          'auto': auto,
+          'svh': 100svh,
+          'lvh': 100lvh,
+          'dvh': 100dvh,
+          'min': min-content,
+          'max': max-content,
+          'fit': fit-content,
+        ),
+        map-merge(
+          $percentage-spacing-positive,
+          map-merge(
+            $viewport-height-spacing-positive,
+            $height-pixel-spacing-positive
+          )
+        )
+      ),
+  ),
+  'position': (
+    'prefix': 'p',
+    'values': (
+      'absolute': absolute,
+      'relative': relative,
+      'fixed': fixed,
+      'sticky': sticky,
+    ),
+  ),
+  'top': (
+    'prefix': 'top',
+    'values':
+      map-merge(
+        $percentage-spacing-positive,
+        map-merge(
+          $percentage-spacing-negative,
+          map-merge(
+            $position-pixel-spacing-positive,
+            $position-pixel-spacing-negative
+          )
+        )
+      ),
+  ),
+  'bottom': (
+    'prefix': 'bottom',
+    'values':
+      map-merge(
+        $percentage-spacing-positive,
+        map-merge(
+          $percentage-spacing-negative,
+          map-merge(
+            $position-pixel-spacing-positive,
+            $position-pixel-spacing-negative
+          )
+        )
+      ),
+  ),
+  'left': (
+    'prefix': 'left',
+    'values':
+      map-merge(
+        $percentage-spacing-positive,
+        map-merge(
+          $percentage-spacing-negative,
+          map-merge(
+            $position-pixel-spacing-positive,
+            $position-pixel-spacing-negative
+          )
+        )
+      ),
+  ),
+  'right': (
+    'prefix': 'right',
+    'values':
+      map-merge(
+        $percentage-spacing-positive,
+        map-merge(
+          $percentage-spacing-negative,
+          map-merge(
+            $position-pixel-spacing-positive,
+            $position-pixel-spacing-negative
+          )
+        )
+      ),
+  ),
+);
+
+// Generate utility classes
+@each $property, $map in $utilities {
+  $prefix: map-get($map, 'prefix');
+  $values: map-get($map, 'values');
+
+  @each $k, $v in $values {
+    @if ($k == 'default') {
+      .#{$prefix} {
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+    }
+  }
+}
+
+// More utility classes
+.opacity-hover {
+  opacity: $opacity-hover;
+}
+.opacity-disabled {
+  opacity: $opacity-disabled;
+}
+
+/* 
+************************************************************************************************************************
+END <=> CSS Properties Utility Classes <=> END
+************************************************************************************************************************
+*/
